@@ -157,7 +157,7 @@ section{padding-block:72px}
 @media (max-width:860px){.split{grid-template-columns:1fr}}
 .tiers{display:grid;gap:10px}
 .tier{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-.ring{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1rem;color:var(--electric-ink);border:3px solid var(--electric)}
+.ring{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:.95rem;white-space:nowrap;letter-spacing:-.02em;color:var(--electric-ink);border:3px solid var(--electric)}
 .tier:nth-child(2) .ring{border-style:dashed}
 .tier:nth-child(3) .ring{border-style:dotted}
 .tier b{display:block}
