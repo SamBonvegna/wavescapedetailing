@@ -12,7 +12,7 @@ SQUARE_ENVIRONMENT = "sandbox"   # change to "production" when going live
 [[d1_databases]]
 binding = "DB"
 database_name = "wavescape"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "c1b7f32e-9367-4b19-99a9-6cdd72fc173e"
 migrations_dir = "migrations"
 
 # Customer photo uploads. Create it with: npx wrangler r2 bucket create wavescape-photos
