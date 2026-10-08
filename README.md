@@ -40,10 +40,9 @@ You'll need free accounts at Cloudflare, Square Developer, Google Cloud and Rese
    npm install
    npx wrangler login
    ```
-2. **Create the booking database** and paste the `database_id` it prints into `wrangler.toml`:
+2. **Create the booking database** and paste the `database_id` it prints into `wrangler.toml`. The tables are created automatically the first time the site runs.
    ```
    npx wrangler d1 create wavescape
-   npm run db:remote
    ```
 3. **Create the photo bucket** (turn on R2 in the Cloudflare dashboard first):
    ```
