@@ -1,0 +1,20 @@
+# Copy to .dev.vars for local testing (never commit .dev.vars).
+# In production set these as encrypted variables in the Cloudflare Pages dashboard.
+ADMIN_PASSWORD=change-me
+OWNER_EMAIL=you@example.com
+
+# Square (sandbox keys from developer.squareup.com while testing)
+SQUARE_APPLICATION_ID=
+SQUARE_LOCATION_ID=
+SQUARE_ACCESS_TOKEN=
+
+# Google Maps Distance Matrix API key
+GOOGLE_MAPS_API_KEY=
+
+# Resend (resend.com) for confirmation emails
+RESEND_API_KEY=
+FROM_EMAIL=Wave Scape <bookings@wavescaperi.org>
+
+# Local testing shortcuts: skip Square and Maps
+FAKE_PAYMENTS=1
+FAKE_MILES=8

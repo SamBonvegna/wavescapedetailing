@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Book a Detail | Wave Scape</title>
+<meta name="description" content="Mobile car, truck and boat detailing and ceramic coating across Rhode Island. Based in Cranston. Self-contained, so we bring our own water and power. Book online.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Wave Scape Mobile Detailing">
+<meta property="og:description" content="Mobile auto and marine detailing and ceramic coatings across Rhode Island.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <mask id="wscut" maskUnits="userSpaceOnUse" x="0" y="0" width="176" height="190"><rect width="176" height="190" fill="#fff"/><path d="M8 190 C32 158 56 125 99 125 C122 125 137 134 147 144 L128 152 C108 160 104 181 119 190 Z" fill="#000"/></mask>
+  <symbol id="wsmark" viewBox="0 0 176 190"><path d="M88 0 L176 190 L0 190 Z" mask="url(#wscut)"/></symbol>
+</defs></svg>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Wave Scape home"><span class="lockup "><span class="wm"><span class="w">W<svg class="mk" viewBox="0 0 176 190" aria-hidden="true"><use href="#wsmark"/></svg>VE</span> SCAPE</span><span class="tag">Car detailing &amp; ceramic coating</span></span></a>
+    
+    <a class="btn ghost" href="/">View site</a>
+  </div>
+</header>
+<main class="wrap admin" style="padding-block:32px 72px">
+  <h1 style="font-size:clamp(1.8rem,4vw,2.4rem);text-transform:uppercase">Bookings</h1>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="bookings">Upcoming</button>
+    <button role="tab" aria-selected="false" data-tab="past">Past 30 days</button>
+    <button role="tab" aria-selected="false" data-tab="blocks">Closed days</button>
+    <button role="tab" aria-selected="false" data-tab="members">Memberships</button>
+  </div>
+  <p class="err" id="err" hidden></p>
+
+  <section data-panel="bookings"><div class="table-wrap"><table class="admin-table" id="upcoming"></table></div></section>
+  <section data-panel="past" hidden><div class="table-wrap"><table class="admin-table" id="past"></table></div></section>
+
+  <section data-panel="blocks" hidden>
+    <p class="fine" style="margin:0 0 12px">Close a day so customers can't book it. Holidays are closed automatically.</p>
+    <form id="blockForm" class="row-inline" style="max-width:520px">
+      <input class="input" type="date" id="blockDate" required aria-label="Date to close">
+      <input class="input" id="blockReason" placeholder="Reason (optional)" aria-label="Reason">
+      <button class="btn" type="submit">Close day</button>
+    </form>
+    <div class="table-wrap" style="margin-top:16px"><table class="admin-table" id="blocks"></table></div>
+  </section>
+
+  <section data-panel="members" hidden>
+    <p class="fine" style="margin:0 0 12px">Set up the monthly billing in Square (Invoices, recurring series), then mark the request active.</p>
+    <div class="table-wrap"><table class="admin-table" id="members"></table></div>
+  </section>
+</main>
+<script type="module" src="/assets/admin.js"></script>
+</body>
+</html>
