@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Book a Detail | Wave Scape</title>
+<meta name="description" content="Mobile car, truck and boat detailing and ceramic coating across Rhode Island. Based in Cranston. Self-contained, so we bring our own water and power. Book online.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Wave Scape Mobile Detailing">
+<meta property="og:description" content="Mobile auto and marine detailing and ceramic coatings across Rhode Island.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <mask id="wscut" maskUnits="userSpaceOnUse" x="0" y="0" width="176" height="190"><rect width="176" height="190" fill="#fff"/><path d="M8 190 C32 158 56 125 99 125 C122 125 137 134 147 144 L128 152 C108 160 104 181 119 190 Z" fill="#000"/></mask>
+  <symbol id="wsmark" viewBox="0 0 176 190"><path d="M88 0 L176 190 L0 190 Z" mask="url(#wscut)"/></symbol>
+</defs></svg>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Wave Scape home"><span class="lockup "><span class="wm"><span class="w">W<svg class="mk" viewBox="0 0 176 190" aria-hidden="true"><use href="#wsmark"/></svg>VE</span> SCAPE</span><span class="tag">Car detailing &amp; ceramic coating</span></span></a>
+    <nav class="links" aria-label="Main">
+      <a href="/#auto">Auto</a><a href="/#marine">Marine</a><a href="/#members">Memberships</a><a href="/#area">Service area</a>
+    </nav>
+    <a class="btn ghost" href="tel:+14015955945">(401) 595-5945</a>
+  </div>
+</header>
+<main class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Online booking</p>
+    <h1>Book your detail</h1>
+  </div>
+
+  <div class="book" id="bookForm">
+    <div>
+      <section class="step-card" aria-labelledby="s1"><h2 id="s1"><span class="n">1.</span> Your detail</h2>
+        <div id="picker"></div>
+      </section>
+
+      <section class="step-card" aria-labelledby="s2"><h2 id="s2"><span class="n">2.</span> Where</h2>
+        <p class="fine" style="margin:0">The street address where we'll do the work. Travel is free within 5 miles of Cranston.</p>
+        <div class="row-inline" style="margin-top:10px">
+          <input class="input" id="address" autocomplete="street-address" placeholder="123 Main St, Warwick, RI 02886" aria-label="Service address">
+          <button class="btn" type="button" id="checkAddr">Check</button>
+        </div>
+        <p class="err" id="addrErr" hidden></p>
+        <p class="ok-note" id="addrOk" hidden></p>
+      </section>
+
+      <section class="step-card" aria-labelledby="s3"><h2 id="s3"><span class="n">3.</span> When</h2>
+        <div class="cal-nav"><button type="button" id="prevWeek">Earlier</button><span class="fine" id="calLabel" style="margin:0"></span><button type="button" id="nextWeek">Later</button></div>
+        <div class="days" id="days"></div>
+        <div class="slots" id="slots"></div>
+        <p class="fine" id="slotNote"></p>
+      </section>
+
+      <section class="step-card" aria-labelledby="s4"><h2 id="s4"><span class="n">4.</span> Your details</h2>
+        <div class="grid2">
+          <label class="field"><span class="lbl">Name</span><input class="input" id="name" autocomplete="name"></label>
+          <label class="field"><span class="lbl">Phone</span><input class="input" id="phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <label class="field"><span class="lbl">Email</span><input class="input" id="email" type="email" autocomplete="email"></label>
+        <label class="field"><span class="lbl" id="vehicleLbl">Vehicle (year, make, model, color)</span><input class="input" id="vehicle"></label>
+        <label class="field"><span class="lbl">Notes</span><textarea class="input" id="notes" placeholder="Gate code, parking spot, marina slip, anything we should know"></textarea></label>
+        <div class="field"><span class="lbl">Photos (optional)</span>
+          <p class="fine" id="photoHint" style="margin:0">Photos help us plan the job.</p>
+          <input type="file" id="photos" accept="image/*" multiple>
+          <div class="thumbs" id="thumbs"></div>
+          <p class="err" id="photoErr" hidden></p>
+        </div>
+      </section>
+
+      <section class="step-card" aria-labelledby="s5"><h2 id="s5"><span class="n">5.</span> Deposit</h2>
+        <p class="fine" style="margin:0">We charge 10% now to hold your time. It comes off your bill, and you pay the rest when the job's done.</p>
+        <div id="card-container"></div>
+        <p class="fine" id="payNote" hidden></p>
+        <p class="err" id="bookErr" hidden></p>
+        <button class="btn" type="button" id="payBtn" style="justify-content:center;margin-top:8px">Pay deposit and book</button>
+      </section>
+    </div>
+
+    <aside class="summary" aria-live="polite">
+      <h2>Summary</h2>
+      <p class="when" id="sumWhen">Pick a time</p>
+      <div class="lines" id="sumLines"></div>
+    </aside>
+  </div>
+
+  <div class="done" id="done" hidden>
+    <p class="eyebrow">Booking confirmed</p>
+    <h1>You're booked</h1>
+    <p id="doneWhen" style="font-weight:600"></p>
+    <div class="lines" id="doneLines"></div>
+    <p class="fine">We emailed your confirmation. Questions? Call or text (401) 595-5945.</p>
+    <a class="btn" href="/">Back to home</a>
+  </div>
+</main>
+<footer>
+  <div class="wrap cols">
+    <div>
+      <span class="lockup lg"><span class="wm"><span class="w">W<svg class="mk" viewBox="0 0 176 190" aria-hidden="true"><use href="#wsmark"/></svg>VE</span> SCAPE</span><span class="tag">Car detailing &amp; ceramic coating</span></span>
+      <p class="slogan">Fueled by passion, <span>driven to results.</span></p>
+      <p style="margin-top:10px;max-width:42ch">Wave Scape is a mobile auto and marine detailing company based in Cranston, RI.</p>
+    </div>
+    <div><h3>Call or text</h3><p class="sel">(401) 595-5945</p><p style="margin-top:6px">Every day, 9am–5pm</p></div>
+    <div><h3>Follow</h3><p><a href="https://www.instagram.com/wave_scape_ri/" rel="noopener">Instagram</a></p><p><a href="https://www.facebook.com/profile.php?id=61550880542952" rel="noopener">Facebook</a></p></div>
+  </div>
+</footer>
+<script type="module" src="/assets/book.js"></script>
+</body>
+</html>

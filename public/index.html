@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wave Scape | Mobile Auto &amp; Marine Detailing in Rhode Island</title>
+<meta name="description" content="Mobile car, truck and boat detailing and ceramic coating across Rhode Island. Based in Cranston. Self-contained, so we bring our own water and power. Book online.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Wave Scape Mobile Detailing">
+<meta property="og:description" content="Mobile auto and marine detailing and ceramic coatings across Rhode Island.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoWash","name":"Wave Scape","description":"Mobile auto and marine detailing and ceramic coatings","telephone":"+1-401-595-5945","url":"https://www.wavescaperi.org/","areaServed":"Rhode Island","address":{"@type":"PostalAddress","addressLocality":"Cranston","addressRegion":"RI","addressCountry":"US"},"openingHours":"Mo-Su 09:00-17:00","sameAs":["https://www.instagram.com/wave_scape_ri/","https://www.facebook.com/profile.php?id=61550880542952"]}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <mask id="wscut" maskUnits="userSpaceOnUse" x="0" y="0" width="176" height="190"><rect width="176" height="190" fill="#fff"/><path d="M8 190 C32 158 56 125 99 125 C122 125 137 134 147 144 L128 152 C108 160 104 181 119 190 Z" fill="#000"/></mask>
+  <symbol id="wsmark" viewBox="0 0 176 190"><path d="M88 0 L176 190 L0 190 Z" mask="url(#wscut)"/></symbol>
+</defs></svg>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Wave Scape home"><span class="lockup "><span class="wm"><span class="w">W<svg class="mk" viewBox="0 0 176 190" aria-hidden="true"><use href="#wsmark"/></svg>VE</span> SCAPE</span><span class="tag">Car detailing &amp; ceramic coating</span></span></a>
+    <nav class="links" aria-label="Main">
+      <a href="#auto">Auto</a><a href="#marine">Marine</a><a href="#members">Memberships</a><a href="#area">Service area</a>
+    </nav>
+    <a class="btn" href="/book/">Book now</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <canvas id="ripples" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" style="color:#E3F1FF">Mobile auto &amp; marine detailing · Rhode Island</p>
+        <h1 style="margin-top:12px">We bring the <em>detail shop</em> to your driveway.</h1>
+        <p class="lede">Cars, trucks and boats detailed at your home, office or marina. Our rig is self-contained, so we don't need your water or power.</p>
+        <div class="ctas">
+          <a class="btn" href="#quote">Get my price</a>
+          <a class="btn ghost" href="#area">Check service area</a>
+        </div>
+        <div class="chips">
+          <span class="chip">Free travel within 5 mi of Cranston</span>
+          <span class="chip">10% deposit to book</span>
+          <span class="chip">Every day, 9am–5pm</span>
+        </div>
+      </div>
+
+      <form class="quote" id="quote" aria-labelledby="qt">
+        <h3 id="qt">Instant quote</h3>
+        <p class="sub">Your price, before you book.</p>
+        <div id="picker"></div>
+        <div class="field"><span>Driving distance from Cranston</span>
+          <div class="range-row">
+            <input type="range" id="miles" min="0" max="40" step="1" value="5" aria-label="Miles from Cranston">
+            <output id="milesOut" for="miles">5 mi</output>
+          </div>
+        </div>
+        <div class="lines" aria-live="polite" id="lines"></div>
+        <button class="btn" type="submit">Pick a time</button>
+        <p class="fine">Your exact travel fee is set from your address on the next step. The deposit is charged through Square and comes off your final bill.</p>
+      </form>
+    </div>
+  </div>
+
+  <section id="auto">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Auto detailing</p>
+        <h2>Price menu</h2>
+        <p>Pick interior, exterior or both, in Basic or Select. Book a full detail and save compared with booking them separately.</p>
+      </div>
+      <div class="menu-bar">
+        <div class="seg" role="radiogroup" aria-label="Vehicle size for the menu">
+          <input type="radio" name="msize" id="m-sedan" value="sedan" checked><label for="m-sedan">Sedan</label>
+          <input type="radio" name="msize" id="m-suv" value="suv"><label for="m-suv">SUV</label>
+          <input type="radio" name="msize" id="m-truck" value="truck"><label for="m-truck">Truck</label>
+        </div>
+        <p class="fine" style="margin:0">SUVs are 15% more than sedans. Trucks are 10% more than SUVs.</p>
+      </div>
+      <div class="menu-wrap"><table class="menu" id="menu"></table></div>
+
+      <div class="incl">
+        <article><h3>Basic</h3><ul>
+          <li><b>Interior:</b> vacuum, wipe down all surfaces, windows, door jambs</li>
+          <li><b>Exterior:</b> hand wash, wheels and tires, dry, tire shine</li>
+        </ul></article>
+        <article class="s"><h3>Select</h3><ul>
+          <li><b>Interior:</b> everything in Basic, plus carpet and seat shampoo, steam clean, leather clean and condition</li>
+          <li><b>Exterior:</b> everything in Basic, plus iron decontamination, clay bar, paint sealant</li>
+          <li>Unlocks the monthly Select membership</li>
+        </ul></article>
+      </div>
+
+      <div class="extras">
+        <div class="extra">
+          <h3>Paint polish</h3>
+          <p>Removes swirls and light scratches. Available with a Select Exterior or Select Full Detail, since those include the iron decontamination and clay bar prep.</p>
+          <div id="polishRows"></div>
+          <p class="fine">Deeper correction is quoted from photos of your paint, which you can add when you book.</p>
+        </div>
+        <div class="extra">
+          <h3>Ceramic coating</h3>
+          <p>Long-term gloss and protection. Available with a Select Exterior or Select Full Detail. We recommend a polish first to restore clarity in the paint before it's coated.</p>
+          <div id="ceramicRows"></div>
+        </div>
+        <div class="extra">
+          <h3>Add-ons</h3>
+          <p>Add to any detail.</p>
+          <div id="addonRows"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint" id="marine">
+    <div class="wrap marine">
+      <div>
+        <p class="eyebrow">Marine detailing</p>
+        <h2 style="margin-top:10px">At the slip, on the trailer or in the driveway</h2>
+        <p style="margin-top:14px;color:var(--muted)">We bring our own water and power, so we can work at the marina, the ramp or your house.</p>
+        <div class="rates" id="rates"></div>
+        <p class="todo" style="margin-top:14px">Priced per square foot (length × beam), for boats from 10 to 200 ft. We recommend a polish before a ceramic coating.</p>
+      </div>
+      <div class="boat-art" aria-hidden="true">
+        <svg viewBox="0 0 320 170" width="100%">
+          <path d="M40 110 L280 110 L250 140 L70 140 Z" fill="var(--card)" stroke="var(--fg)" stroke-width="2.5"/>
+          <path d="M110 110 L130 80 L210 80 L225 110" fill="none" stroke="var(--fg)" stroke-width="2.5"/>
+          <path d="M140 80 L150 62 L196 62" fill="none" stroke="var(--electric)" stroke-width="2.5"/>
+          <path d="M60 125 L262 125" stroke="var(--electric)" stroke-width="4"/>
+          <path d="M0 150 C30 138 60 138 90 150 S150 162 180 150 S240 138 270 150 S310 160 320 152" fill="none" stroke="var(--electric)" stroke-width="3"/>
+          <path d="M0 162 C30 152 60 152 90 162 S150 172 180 162 S240 152 270 162" fill="none" stroke="var(--line)" stroke-width="3"/>
+          <g font-family="Figtree,sans-serif" font-size="11" fill="var(--muted)"><path d="M40 98 L280 98" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="160" y="93" text-anchor="middle">length × beam = sq ft</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="area">
+    <div class="wrap split">
+      <div>
+        <div class="head">
+          <p class="eyebrow">Service area</p>
+          <h2>Based in Cranston, serving all of Rhode Island</h2>
+          <p>Travel is measured in driving miles from our home base. The quote adds it for you.</p>
+        </div>
+        <div class="tiers">
+          <div class="tier"><div class="ring">0–5</div><div><b>Within 5 miles</b><p>Around our Cranston home base</p></div><div class="fee">Free</div></div>
+          <div class="tier"><div class="ring">5–10</div><div><b>5 to 10 miles</b><p>A flat travel fee</p></div><div class="fee">$20</div></div>
+          <div class="tier"><div class="ring">10+</div><div><b>Beyond 10 miles</b><p>$20 plus $1 for each mile past 10</p></div><div class="fee">$20 + $1/mi</div></div>
+        </div>
+      </div>
+      <div class="radar" aria-label="Rings showing 5 and 10 mile radius from Cranston">
+        <svg viewBox="0 0 400 400">
+          <circle cx="200" cy="200" r="190" fill="var(--mist)" stroke="var(--line)" stroke-dasharray="2 6" stroke-width="2"/>
+          <circle cx="200" cy="200" r="130" fill="none" stroke="var(--electric)" stroke-width="2" stroke-dasharray="8 6" opacity=".7"/>
+          <circle cx="200" cy="200" r="65" fill="color-mix(in srgb,var(--electric) 18%,transparent)" stroke="var(--electric)" stroke-width="2.5"/>
+          <circle cx="200" cy="200" r="7" fill="var(--electric)"/>
+          <g font-family="Figtree,sans-serif" font-weight="700" font-size="13" fill="var(--fg)" text-anchor="middle">
+            <text x="200" y="228">Cranston</text>
+            <text x="200" y="128" fill="var(--electric-ink)">5 mi · free</text>
+            <text x="200" y="63" fill="var(--electric-ink)">10 mi · $20</text>
+            <text x="200" y="22" fill="var(--muted)">$1/mi beyond</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">How booking works</p><h2>From booking to a finished detail</h2></div>
+      <div class="steps">
+        <div class="step"><h3>Book online</h3><p>Pick your service, your vehicle and an open time. Pay a 10% deposit to hold the spot.</p></div>
+        <div class="step"><h3>We roll up</h3><p>We arrive at your address with our own water and power.</p></div>
+        <div class="step"><h3>Pay the rest</h3><p>We take the deposit off your bill and charge the balance when the job's done.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="members">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Select membership</p><h2>Keep it clean every month</h2><p>A monthly maintenance visit at your place at a members-only rate. Memberships open up after your first Select detail. Prices shown are for sedans.</p></div>
+      <div class="members">
+        <div class="member" data-plan="ext"><p><b>Exterior</b><small class="req">After a Select Exterior or Select Full</small><span class="sizes-line"></span></p><div class="member-actions"><span class="price">$75<small>/mo</small></span><button class="btn" type="button" data-join>Join</button></div></div>
+        <div class="member" data-plan="int"><p><b>Interior</b><small class="req">After a Select Interior or Select Full</small><span class="sizes-line"></span></p><div class="member-actions"><span class="price">$75<small>/mo</small></span><button class="btn" type="button" data-join>Join</button></div></div>
+        <div class="member" data-plan="full"><p><b>Full</b><small class="req">After a Select Full Detail</small><span class="sizes-line"></span></p><div class="member-actions"><span class="price">$120<small>/mo</small></span><button class="btn" type="button" data-join>Join</button></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <span class="lockup lg"><span class="wm"><span class="w">W<svg class="mk" viewBox="0 0 176 190" aria-hidden="true"><use href="#wsmark"/></svg>VE</span> SCAPE</span><span class="tag">Car detailing &amp; ceramic coating</span></span>
+      <p class="slogan">Fueled by passion, <span>driven to results.</span></p>
+      <p style="margin-top:10px;max-width:42ch">Wave Scape is a mobile auto and marine detailing company based in Cranston, RI.</p>
+    </div>
+    <div><h3>Call or text</h3><p class="sel">(401) 595-5945</p><p style="margin-top:6px">Every day, 9am–5pm</p></div>
+    <div><h3>Follow</h3><p><a href="https://www.instagram.com/wave_scape_ri/" rel="noopener">Instagram</a></p><p><a href="https://www.facebook.com/profile.php?id=61550880542952" rel="noopener">Facebook</a></p></div>
+  </div>
+</footer>
+
+<dialog id="joinDialog">
+  <form id="joinForm" method="dialog">
+    <h2 id="joinTitle">Join</h2>
+    <p class="fine" style="margin:0">Use the same email or phone number you booked your Select detail with.</p>
+    <div class="field"><span>Vehicle</span>
+      <div class="seg" role="radiogroup">
+        <input type="radio" name="jsize" id="js-sedan" value="sedan" checked><label for="js-sedan">Sedan</label>
+        <input type="radio" name="jsize" id="js-suv" value="suv"><label for="js-suv">SUV</label>
+        <input type="radio" name="jsize" id="js-truck" value="truck"><label for="js-truck">Truck</label>
+      </div>
+    </div>
+    <label class="field"><span class="lbl">Name</span><input class="input" id="jname" autocomplete="name" required></label>
+    <label class="field"><span class="lbl">Email</span><input class="input" id="jemail" type="email" autocomplete="email" required></label>
+    <label class="field"><span class="lbl">Phone</span><input class="input" id="jphone" type="tel" autocomplete="tel" required></label>
+    <p class="err" id="joinErr" hidden></p>
+    <p class="ok-note" id="joinOk" hidden></p>
+    <div class="row-inline"><button class="btn ghost" type="button" id="joinCancel">Close</button><button class="btn" type="submit" id="joinSubmit">Request membership</button></div>
+  </form>
+</dialog>
+<script type="module" src="/assets/site.js"></script>
+</body>
+</html>
