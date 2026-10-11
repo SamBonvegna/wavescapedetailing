@@ -11,21 +11,33 @@ export async function drivingMiles(env, address) {
     return { miles: Number(env.FAKE_MILES), address };
   }
   if (!env.GOOGLE_MAPS_API_KEY) throw new ServiceError("Address lookup isn't set up yet. Please call or text us to book.");
-  const url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json");
-  url.searchParams.set("origins", env.BASE_ADDRESS || BASE_ADDRESS);
-  url.searchParams.set("destinations", address);
-  url.searchParams.set("units", "imperial");
-  url.searchParams.set("key", env.GOOGLE_MAPS_API_KEY);
-  const res = await fetch(url);
-  const data = await res.json().catch(() => ({}));
-  const el = data?.rows?.[0]?.elements?.[0];
-  if (data.status !== "OK" || el?.status !== "OK") {
+  // Google's Routes API. The older Distance Matrix API can't be turned on for new projects.
+  const res = await fetch("https://routes.googleapis.com/distanceMatrix/v2:computeRouteMatrix", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-goog-api-key": env.GOOGLE_MAPS_API_KEY,
+      "x-goog-fieldmask": "originIndex,destinationIndex,status,condition,distanceMeters",
+    },
+    body: JSON.stringify({
+      origins: [{ waypoint: { address: env.BASE_ADDRESS || BASE_ADDRESS } }],
+      destinations: [{ waypoint: { address } }],
+      travelMode: "DRIVE",
+    }),
+  });
+  const data = await res.json().catch(() => null);
+  if (res.status === 400) {
     throw new ServiceError("We couldn't find that address. Check the street, city and ZIP code.");
   }
-  return {
-    miles: Math.round((el.distance.value / 1609.344) * 10) / 10,
-    address: data.destination_addresses?.[0] || address,
-  };
+  if (!res.ok) {
+    console.error("Routes API error", res.status, JSON.stringify(data));
+    throw new ServiceError("Address lookup isn't working right now. Please call or text us to book.");
+  }
+  const el = Array.isArray(data) ? data[0] : null;
+  if (el?.condition !== "ROUTE_EXISTS" || !el.distanceMeters) {
+    throw new ServiceError("We couldn't find that address. Check the street, city and ZIP code.");
+  }
+  return { miles: Math.round((el.distanceMeters / 1609.344) * 10) / 10, address };
 }
 
 function squareBase(env) {

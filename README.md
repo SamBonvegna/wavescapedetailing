@@ -56,7 +56,7 @@ You'll need free accounts at Cloudflare, Square Developer, Google Cloud and Rese
    | `ADMIN_PASSWORD` | Password for `/admin/` (any username works) |
    | `OWNER_EMAIL` | Where new booking and membership emails go |
    | `SQUARE_APPLICATION_ID`, `SQUARE_LOCATION_ID`, `SQUARE_ACCESS_TOKEN` | From developer.squareup.com → your app → Credentials and Locations |
-   | `GOOGLE_MAPS_API_KEY` | Google Cloud console → enable the Distance Matrix API → create a key restricted to it |
+   | `GOOGLE_MAPS_API_KEY` | Google Cloud console → enable the **Routes API** → create an API key restricted to it |
    | `RESEND_API_KEY`, `FROM_EMAIL` | From resend.com after verifying wavescaperi.org, e.g. `Wave Scape <bookings@wavescaperi.org>` |
 
 6. **Test with Square sandbox keys** first. Book a detail using the test card `4111 1111 1111 1111`, any future date and any CVV. When it works, swap in your production Square keys and change `SQUARE_ENVIRONMENT` in `wrangler.toml` to `production`.
